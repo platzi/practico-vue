@@ -3,7 +3,7 @@
     <slot name="header"></slot>
 </div>
 <div class="resume">
-    <slot name="resume"></slot>    
+    <slot name="resume"></slot>
 </div>
 <div class="movements">
     <div class="head" @click="showMovements = !showMovements">

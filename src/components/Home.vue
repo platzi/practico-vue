@@ -4,7 +4,11 @@
             <Header></Header>
         </template>
         <template #resume>
-            <Resume/>
+            <Resume
+                :label="'Ahorro total'"
+                :total-amount="1000000"
+                :amount="amount"
+            />
         </template>
         <template #movements>
             <Movements/>
@@ -20,10 +24,15 @@ import Movements from "./Movements.vue";
 
 export default {
     components: {
-    Layout,
-    Header,
-    Resume,
-    Movements,
-},
+        Layout,
+        Header,
+        Resume,
+        Movements,
+    },
+    data() {
+        return {
+            amount: null,
+        }
+    },
 };
 </script>
