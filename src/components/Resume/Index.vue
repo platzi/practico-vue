@@ -1,6 +1,6 @@
 <template>
     <main>
-        <p>{{ label }}</p>
+        <p>{{ labelVisual }}</p>
         <h1>{{ amountVisual }}</h1>
     </main>
 </template>
@@ -8,8 +8,12 @@
 <script>
 export default {
     props: {
+        totalLabel: {
+            type: String,
+        },
         label: {
             type: String,
+            default: null,
         },
         totalAmount: {
             type: Number,
@@ -20,6 +24,9 @@ export default {
         },
     },
     computed: {
+        labelVisual() {
+            return this.label !== null ? this.label : this.totalLabel; 
+        },
         amountVisual() {
             return this.amount !== null ? this.amount : this.totalAmount;
         }
