@@ -9,7 +9,14 @@
                 :label="label"
                 :total-amount="1000000"
                 :amount="amount"
-            />
+            >
+                <template #graphic>
+                    graphic
+                </template>
+                <template #action>
+                    action
+                </template>
+            </Resume>
         </template>
         <template #movements>
             <Movements/>
