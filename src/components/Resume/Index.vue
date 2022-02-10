@@ -1,14 +1,14 @@
 <template>
-    <main>
-        <p>{{ labelVisual }}</p>
-        <h1>{{ amountCurrency }}</h1>
-        <div class="graphic">
-            <slot name="graphic"></slot>
-        </div>
-        <div class="action">
-            <slot name="action"></slot>
-        </div>
-    </main>
+  <main>
+    <p>{{ labelVisual }}</p>
+    <h1>{{ amountCurrency }}</h1>
+    <div class="graphic">
+      <slot name="graphic"></slot>
+    </div>
+    <div class="action">
+      <slot name="action"></slot>
+    </div>
+  </main>
 </template>
 
 <script>
@@ -18,33 +18,33 @@ const currencyFormatter = new Intl.NumberFormat("es-MX", {
 });
 
 export default {
-    props: {
-        totalLabel: {
-            type: String,
-        },
-        label: {
-            type: String,
-            default: null,
-        },
-        totalAmount: {
-            type: Number,
-        },
-        amount: {
-            type: Number,
-            default: null
-        },
+  props: {
+    totalLabel: {
+      type: String,
     },
-    computed: {
-        labelVisual() {
-            return this.label !== null ? this.label : this.totalLabel; 
-        },
-        amountVisual() {
-            return this.amount !== null ? this.amount : this.totalAmount;
-        },
-        amountCurrency() {
-            return currencyFormatter.format(this.amountVisual);
-        }
+    label: {
+      type: String,
+      default: null,
     },
+    totalAmount: {
+      type: Number,
+    },
+    amount: {
+      type: Number,
+      default: null,
+    },
+  },
+  computed: {
+    labelVisual() {
+      return this.label !== null ? this.label : this.totalLabel;
+    },
+    amountVisual() {
+      return this.amount !== null ? this.amount : this.totalAmount;
+    },
+    amountCurrency() {
+      return currencyFormatter.format(this.amountVisual);
+    },
+  },
 };
 </script>
 
