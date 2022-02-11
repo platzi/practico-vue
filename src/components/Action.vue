@@ -49,9 +49,10 @@ const submit = () => {
   showModal.value = !showModal.value;
   emit("create", {
     title: title.value,
-    amount: movementType.value === "Ingreso" ? amount.value : -amount.value,
     description: description.value,
+    amount: movementType.value === "Ingreso" ? amount.value : -amount.value,
     time: new Date(),
+    id: new Date(),
   });
 };
 </script>
