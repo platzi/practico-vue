@@ -31,7 +31,6 @@
             />
         </svg>
         <p>Últimos 30 días</p>
-        <div>{{ zero }}</div>
     </div>
 </template>
 
